@@ -1,0 +1,48 @@
+<div class="w3-border w3-border-theme">
+    <button id="BtnAdd" onclick="myFunction('addForm')" class="w3-theme w3-btn w3-block w3">
+        Hinzufügen
+    </button>
+    <div id="addForm" class="w3-container w3-center w3-padding-24 w3-card" style="display: none">
+        <p>
+            <input class="w3-input w3-border w3-border-indigo" id="id" type="text">
+            <label class="w3-text-indigo w3-left"><b>ID</b></label>
+        </p>
+        <p>
+            <input class="w3-input w3-border w3-border-indigo" id="first" type="text">
+            <label class="w3-text-indigo w3-left"><b>Vorname</b></label>
+        </p>
+        <p style="padding-bottom: 15px">
+            <input class="w3-input w3-border w3-border-indigo" id="last" type="text">
+            <label class="w3-text-indigo w3-left"><b>Nachname</b></label>
+        </p>
+        <p>
+            <button id="add" class="w3-btn w3-blue w3-left w3-padding w3-theme" style="padding-bottom: 15px">Hinzufügen</button>
+        </p>
+    </div>
+</div>
+<div class="w3-container w3-margin-top" style="margin-bottom: 0px;">
+    <input class="w3-input w3-border w3-padding" type="text" placeholder="Suche ..." id="myInput" onkeyup="seachData">
+
+    <table id="data" class="w3-table-all">
+        <tr class="w3-theme">
+            <th style="width:20%;">ID</th>
+            <th style="width:40%;">Vorname</th>
+            <th style="width:40%;">Nachname</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Peter</td>
+            <td>Hans</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Max</td>
+            <td>Schneider</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Titus</td>
+            <td>Testus</td>
+        </tr>
+    </table>
+</div>
