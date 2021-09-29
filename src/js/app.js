@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("addForm").style.display = "none";
         }
     });
-
+/*
     document.getElementById("add").addEventListener("click", function () {
         let tmpFirstName = document.getElementById("first");
         let tmpLastName = document.getElementById("last");
@@ -121,7 +121,25 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+ */
+
     document.getElementById("myInput").addEventListener("keyup", function () {
         seachRecord();
+    });
+
+    document.getElementById("myFormId").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let tmpFirstName = document.getElementById("first");
+        let tmpLastName = document.getElementById("last");
+        let tmpId = document.getElementById("id");
+
+        let data = [tmpId.value, tmpFirstName.value, tmpLastName.value];
+
+        let tmpNewRow = createTableRow();
+
+        for (text of data) {
+            createTableData(text, tmpNewRow);
+        }
     });
 });
