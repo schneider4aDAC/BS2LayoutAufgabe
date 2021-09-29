@@ -6,19 +6,31 @@
         <form action="" id="myFormId">
             <div class="w3-container w3-padding">
                 <div class="w3-card w3-padding w3-row">
-                    <p>
+                    <p class="w3-padding">
                         <input class="w3-input w3-border w3-border-indigo" id="id" required min="1" max="1000" type="number">
                         <label class="w3-text-indigo w3-left"><b>ID</b></label>
                     </p>
-                    <p>
+                    <p class="w3-padding">
                         <input class="w3-input w3-border w3-border-indigo" id="first" required minlength="3" type="text">
                         <label class="w3-text-indigo w3-left"><b>Vorname</b></label>
                     </p>
-                    <p style="padding-bottom: 15px">
+                    <p class="w3-padding">
                         <input class="w3-input w3-border w3-border-indigo" id="last" type="text">
                         <label class="w3-text-indigo w3-left"><b>Nachname</b></label>
                     </p>
-                    <button type="submit" id="add" class="w3-btn w3-blue w3-left w3-padding w3-theme w3-row" style="padding-bottom: 15px;">Hinzufügen</button>
+                    <p class="w3-padding">
+                        <input class="w3-input w3-border w3-border-indigo" id="date" required type="date">
+                        <label class="w3-text-indigo w3-left"><b>Geburtsdatum</b></label>
+                    </p>
+                    <p class="w3-padding">
+                        <input class="w3-input w3-border w3-border-indigo" id="tel" required type="tel">
+                        <label class="w3-text-indigo w3-left"><b>Handy-Nr</b></label>
+                    </p>
+                    <p class="w3-padding">
+                        <input class="w3-input w3-border w3-border-indigo" id="email" required type="email">
+                        <label class="w3-text-indigo w3-left"><b>E-Mail</b></label>
+                    </p>
+                    <button type="submit" id="add" class="w3-btn w3-blue w3-left w3-padding w3-theme w3-ro w3-margin">Hinzufügen</button>
                 </div>
             </div>
         </form>
@@ -30,23 +42,30 @@
     <table id="data" class="w3-table-all">
         <tr class="w3-theme">
             <th style="width:20%;">ID</th>
-            <th style="width:40%;">Vorname</th>
-            <th style="width:40%;">Nachname</th>
+            <th style="width:30%;">Vorname</th>
+            <th style="width:30%;">Nachname</th>
+            <th style="width:10%"></th>
+            <th style="width:10%"></th>
         </tr>
         <tr>
             <td>1</td>
             <td>Peter</td>
             <td>Hans</td>
+            <td><button class="w3-button w3-margin"><i class="fas fa-edit"></i></i></button></td>
+            <td><button class="w3-button w3-margin"><i class="far fa-trash-alt"></i></button></td>
         </tr>
         <tr>
             <td>2</td>
             <td>Max</td>
             <td>Schneider</td>
+            <td><button class="w3-button w3-margin"><i class="fas fa-edit"></i></i></button></td>
+            <td><button class="w3-button w3-margin"><i class="far fa-trash-alt"></i></button></td>
         </tr>
-        <tr>
             <td>3</td>
             <td>Titus</td>
             <td>Testus</td>
+            <td><button class="w3-button w3-margin"><i class="fas fa-edit"></i></i></button></td>
+            <td><button class="w3-button w3-margin"><i class="far fa-trash-alt"></i></button></td>
         </tr>
     </table>
 </div>

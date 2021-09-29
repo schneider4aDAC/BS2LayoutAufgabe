@@ -1,3 +1,32 @@
+function editBtn(modelDd){
+    let tmpFirstName = document.getElementById("first");
+    let tmpLastName = document.getElementById("last");
+    let tmpId = document.getElementById("id");
+    let tmpDate = document.getElementById("date");
+    let tmpTel = document.getElementById("tel");
+    let tmpEmail = document.getElementById("email");
+    let parentNode = document.getElementById(modelDd).parentNode;
+
+    tmpFirstName = parentNode[0];
+
+}
+
+function addTableDataButtonIcon(icon, tr, modelId, callback){
+    let col = document.createElement("td");
+    let btn = document.createElement("button");
+    let img = document.createElement("i");
+
+    for (let pic of icon.split(" ")) {
+        img.classList.add(pic);
+    }
+    btn.classList.add("w3-button");
+    btn.classList.add("w3-margin");
+    btn.id = modelId;
+    btn.appendChild(img);
+    col.appendChild(btn);
+    tr.appendChild(col);
+}
+
 function createTableRow() {
     let tmpRow = document.createElement("tr");
 
@@ -11,8 +40,12 @@ function createTableData(tex, tr) {
     let tmpCol = document.createElement("td");
     let value = document.createTextNode(tex);
 
-    tmpCol.appendChild(value);
+    if (tr.childElementCount > 2) {
+        tmpCol.style.display = "none";
+    }
 
+    tmpCol.appendChild(value);
+    tmpCol.classList.add("w3-margin");
     tr.appendChild(tmpCol);
 }
 

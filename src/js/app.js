@@ -129,17 +129,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("myFormId").addEventListener("submit", function (event) {
         event.preventDefault();
-
+        let text;
         let tmpFirstName = document.getElementById("first");
         let tmpLastName = document.getElementById("last");
         let tmpId = document.getElementById("id");
+        let tmpDate = document.getElementById("date");
+        let tmpTel = document.getElementById("tel");
+        let tmpEmail = document.getElementById("email");
 
-        let data = [tmpId.value, tmpFirstName.value, tmpLastName.value];
+        let data = [tmpId.value, tmpFirstName.value, tmpLastName.value, tmpDate.value, tmpTel.value, tmpEmail.value];
 
         let tmpNewRow = createTableRow();
 
         for (text of data) {
             createTableData(text, tmpNewRow);
         }
+        addTableDataButtonIcon("fas fa-edit", tmpNewRow, tmpId, function () {
+
+        });
+        addTableDataButtonIcon("far fa-trash-alt", tmpNewRow, tmpId, function () {
+
+        });
     });
 });
