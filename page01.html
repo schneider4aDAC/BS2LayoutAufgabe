@@ -31,41 +31,24 @@
                         <label class="w3-text-indigo w3-left"><b>E-Mail</b></label>
                     </p>
                     <button type="submit" id="add" class="w3-btn w3-blue w3-left w3-padding w3-theme w3-ro w3-margin">Hinzufügen</button>
+                    <button id="changeAdd" type="reset" class="w3-circle w3-blue w3-padding">+</button>
                 </div>
             </div>
         </form>
+
     </div>
 </div>
 <div class="w3-container w3-margin-top" style="margin-bottom: 0px;">
-    <input class="w3-input w3-border w3-padding" type="text" placeholder="Suche ..." id="myInput" onkeyup="seachData">
-
-    <table id="data" class="w3-table-all">
-        <tr class="w3-theme">
-            <th style="width:20%;">ID</th>
-            <th style="width:30%;">Vorname</th>
-            <th style="width:30%;">Nachname</th>
-            <th style="width:10%"></th>
-            <th style="width:10%"></th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Peter</td>
-            <td>Hans</td>
-            <td><button class="w3-button w3-margin"><i class="fas fa-edit"></i></i></button></td>
-            <td><button class="w3-button w3-margin"><i class="far fa-trash-alt"></i></button></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Max</td>
-            <td>Schneider</td>
-            <td><button class="w3-button w3-margin"><i class="fas fa-edit"></i></i></button></td>
-            <td><button class="w3-button w3-margin"><i class="far fa-trash-alt"></i></button></td>
-        </tr>
-            <td>3</td>
-            <td>Titus</td>
-            <td>Testus</td>
-            <td><button class="w3-button w3-margin"><i class="fas fa-edit"></i></i></button></td>
-            <td><button class="w3-button w3-margin"><i class="far fa-trash-alt"></i></button></td>
-        </tr>
-    </table>
+    <input class="w3-input w3-border w3-padding w3-container" type="text" placeholder="Suche ..." id="myInput" onkeyup="seachData">
+    <div style="overflow: auto; width: 100%">
+        <table id="data" class="w3-table-all w3-margin-top">
+            <tr class="w3-theme">
+                <th style="width:20%;">ID</th>
+                <th style="width:40%;">Vorname</th>
+                <th style="width:40%;">Nachname</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </table>
+    </div>
 </div>

@@ -139,16 +139,70 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let data = [tmpId.value, tmpFirstName.value, tmpLastName.value, tmpDate.value, tmpTel.value, tmpEmail.value];
 
-        let tmpNewRow = createTableRow();
+        if (document.getElementById("add").innerText === "Hinzufügen") {
+            let tmpNewRow = createTableRow();
 
-        for (text of data) {
-            createTableData(text, tmpNewRow);
+            for (text of data) {
+                createTableData(text, tmpNewRow);
+            }
+
+            addTableDataButtonIcon("fas fa-edit", tmpNewRow, tmpId.value, function (modelId) {
+                editBtn(modelId);
+            });
+            addTableDataButtonIcon("far fa-trash-alt", tmpNewRow, tmpId.value, function (modelId) {
+                deleteBtn(modelId);
+            });
+
+            tmpFirstName.value = null;
+            tmpLastName.value = null;
+            tmpId.value = null;
+            tmpDate.value = null;
+            tmpTel.value = null;
+            tmpEmail.value = null;
+        } else {
+            let tmpFirstName = document.getElementById("first");
+            let tmpLastName = document.getElementById("last");
+            let tmpId = document.getElementById("id");
+            let tmpDate = document.getElementById("date");
+            let tmpTel = document.getElementById("tel");
+            let tmpEmail = document.getElementById("email");
+
+            let parentNode = document.getElementById(tmpId.value).parentNode.parentNode;
+
+            parentNode.children[0].innerHTML = tmpId.value;
+            parentNode.children[1].innerText = tmpFirstName.value;
+            parentNode.children[2].innerText = tmpLastName.value;
+            parentNode.children[3].innerText = tmpDate.value;
+            parentNode.children[4].innerText = tmpTel.value;
+            parentNode.children[5].innerText = tmpEmail.value;
+
+            tmpFirstName.value = null;
+            tmpLastName.value = null;
+            tmpId.value = null;
+            tmpDate.value = null;
+            tmpTel.value = null;
+            tmpEmail.value = null;
+
+            document.getElementById("add").innerText = "Hinzufügen";
         }
-        addTableDataButtonIcon("fas fa-edit", tmpNewRow, tmpId, function () {
-
-        });
-        addTableDataButtonIcon("far fa-trash-alt", tmpNewRow, tmpId, function () {
-
-        });
     });
+
+    document.getElementById("changeAdd").addEventListener("click", function () {
+        let tmpFirstName = document.getElementById("first");
+        let tmpLastName = document.getElementById("last");
+        let tmpId = document.getElementById("id");
+        let tmpDate = document.getElementById("date");
+        let tmpTel = document.getElementById("tel");
+        let tmpEmail = document.getElementById("email");
+
+        tmpFirstName.value = null;
+        tmpLastName.value = null;
+        tmpId.value = null;
+        tmpDate.value = null;
+        tmpTel.value = null;
+        tmpEmail.value = null;
+
+        document.getElementById("add").innerText = "Hinzufügen";
+    })
+
 });

@@ -1,14 +1,38 @@
-function editBtn(modelDd){
+function deleteBtn(modelId){
+
+    let dataTable = document.getElementById("data");
+
+
+    for (let i = 2; i < dataTable.childNodes.length; i++){
+
+        let value = dataTable.childNodes[i];
+
+        for (let childNode of value.childNodes) {
+            if (childNode.childNodes[0].id === modelId){
+                dataTable.removeChild(value);
+                break;
+            }
+        }
+    }
+}
+
+function editBtn(modelId){
     let tmpFirstName = document.getElementById("first");
     let tmpLastName = document.getElementById("last");
     let tmpId = document.getElementById("id");
     let tmpDate = document.getElementById("date");
     let tmpTel = document.getElementById("tel");
     let tmpEmail = document.getElementById("email");
-    let parentNode = document.getElementById(modelDd).parentNode;
+    let parentNode = document.getElementById(modelId).parentNode.parentNode;
 
-    tmpFirstName = parentNode[0];
+    tmpId.value = parentNode.children[0].innerHTML;
+    tmpFirstName.value = parentNode.children[1].innerText;
+    tmpLastName.value = parentNode.children[2].innerText;
+    tmpDate.value = parentNode.children[3].innerText;
+    tmpTel.value = parentNode.children[4].innerText;
+    tmpEmail.value = parentNode.children[5].innerText;
 
+    document.getElementById("add").innerText = "Speichern";
 }
 
 function addTableDataButtonIcon(icon, tr, modelId, callback){
@@ -22,9 +46,14 @@ function addTableDataButtonIcon(icon, tr, modelId, callback){
     btn.classList.add("w3-button");
     btn.classList.add("w3-margin");
     btn.id = modelId;
+    //btn.value = modelId;
     btn.appendChild(img);
     col.appendChild(btn);
     tr.appendChild(col);
+
+    btn.addEventListener("click", function() {
+        callback(modelId);
+    });
 }
 
 function createTableRow() {
